@@ -15,4 +15,4 @@
 TypeError: 'NoneType' object is not subscriptable
 ```
 
-## if this happens you probably haven't fixed the first erorr or just the input placeholder doesn't appear. The placeholder should say "Add a comment" if it doesn't appear just restart the page and click the phote until it shows up.
+### if this happens you probably haven't fixed the first erorr or just the input placeholder doesn't appear. The placeholder should say "Add a comment" if it doesn't appear just restart the page and click the phote until it shows up.
