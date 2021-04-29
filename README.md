@@ -19,4 +19,18 @@ TypeError: 'NoneType' object is not subscriptable
 
 ### it's probably a problem with instagrams input placeholder to fix this just restart the page and click on the image until the placeholder text shows "Add a comment". Also the input shouldn't have text in it.
 
-<i>Cool shit isn't it?</i>
+<table style="width:100%">
+  <caption>Monthly savings</caption>
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>February</td>
+    <td>$50</td>
+  </tr>
+</table>
