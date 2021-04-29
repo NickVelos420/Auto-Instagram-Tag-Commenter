@@ -1,4 +1,6 @@
-# This bot can help you with commenting on giveaways.
+# THE BOT IS STILL IN PRODUCTION AND I DON'T KNOW IF IT WORKS PROPERLY
+
+## This bot can help you with commenting on giveaways.
 
 #### The bot will not work if you haven't downloaded the modules that I'm using. To download them you need to have python and pip installed
 
