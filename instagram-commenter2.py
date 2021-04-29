@@ -1,6 +1,3 @@
-# check if the code works 
-# everything is suppose to be working correctly but i don't know
-
 import pyautogui as pya
 import pyperclip
 import string
@@ -27,35 +24,36 @@ timesToGoDown = 1
 firstTime = True
 filesContent = {}
 
-# def copyInput():
-#   # moves the mouse to the comment input
-#   pya.click(locations["inputX"], locations["inputY"])
-#   # highlights everything
-#   pya.hotkey("ctrl", "a")
-#   # copies everything
-#   pya.hotkey("ctrl", "c")
-#   fileManage["allUsersWrite"].write(pyperclip.paste())
-#   fileManage["currentUsersWrite"].write(pyperclip.paste())
-#   if firstTime == True:
-#     return
-#   else:
-#     filesContent["allUsers"] = fileManage["allUsersRead"].split()
-#     filesContent["currentUsers"] = fileManage["currentUsersRead"].split()
-#     for i in filesContent["allUsers"]:
-#       for j in filesContent["currentUsers"]:
-#         if j == i:
-#           pya.click(locations["inputX"], locations["inputY"])          
-#           pya.hotkey("ctrl", "a")
-#           pya.press("delete")
-#           fileManage["currentUsersDelete"]
-#           return
+def copyInput():
+  # moves the mouse to the comment input
+  pya.click(locations["inputX"], locations["inputY"])
+  # highlights everything
+  pya.hotkey("ctrl", "a")
+  # copies everything
+  pya.hotkey("ctrl", "c")
+  fileManage["allUsersWrite"].write(pyperclip.paste())
+  fileManage["currentUsersWrite"].write(pyperclip.paste())
+  if firstTime == True:
+    fileManage[""]
+    return
+  else:
+    filesContent["allUsers"] = fileManage["allUsersRead"].split()
+    filesContent["currentUsers"] = fileManage["currentUsersRead"].split()
+    for i in filesContent["allUsers"]:
+      for j in filesContent["currentUsers"]:
+        if j == i:
+          pya.click(locations["inputX"], locations["inputY"])          
+          pya.hotkey("ctrl", "a")
+          pya.press("delete")
+          fileManage["currentUsersDelete"]
+          return
 
-# def checkIfCantComment(fileName):
-#   checksForError = pya.locateOnScreen(fileName, confidence=0.85)
-#   if checksForError != None:
-#     sleep(4 * 60)
-#   else: 
-#     return
+def checkIfCantComment(fileName):
+  checksForError = pya.locateOnScreen(fileName, confidence=0.85)
+  if checksForError != None:
+    sleep(4 * 60)
+  else: 
+    return
 
 def bot(): 
   global timesToGoDown 
@@ -69,19 +67,19 @@ def bot():
       # writes a random letter
       pya.typewrite("@"+random.choice(string.ascii_letters))
       # waits for the suggestions to load
-      sleep(0.95)
+      sleep(1.1)
       # presses the down button so the users are random
       pya.press("down", presses=timesToGoDown)
       # presses enter so it writes the whole name
       pya.press("enter")
-    # pya.click(locations["inputX"], locations["inputY"])
-    # copyInput()
-    # checkIfCantComment("error.png")
-    # pya.click(locations["inputX"], locations["inputY"])
-    # pya.press("enter")
-    # checks if an error  
-    # checkIfCantComment("error.png")
-    # timesToGoDown += 1
+    pya.click(locations["inputX"], locations["inputY"])
+    copyInput()
+    checkIfCantComment("error.png")
+    pya.click(locations["inputX"], locations["inputY"])
+    pya.press("enter")
+    # checks if instagram blocked you from commenting  
+    checkIfCantComment("error.png")
+    timesToGoDown += 1
     
       
 if commentInput != None:
