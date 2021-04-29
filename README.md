@@ -13,6 +13,7 @@
     <td>pip install pyperclip</td>
   </tr>
 </table>
+
 #### That should do it.
 
 ### If you are getting an error you're probably using the dark theme of instagram or the input placeholder does not appear. To fix the first error (the dark theme) you should just take a screenshot of the input and it must have the emoji button in it just like the comment.png file, now when you have taken the screenshot you put it in the folder of the python script and replace the seventh line with the name of the screenshot you just took. Now if this error pops up again
