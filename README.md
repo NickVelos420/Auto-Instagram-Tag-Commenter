@@ -18,3 +18,5 @@ TypeError: 'NoneType' object is not subscriptable
 ```
 
 ### it's probably a problem with instagrams input placeholder to fix this just restart the page and click on the image until the placeholder text shows "Add a comment". Also the input shouldn't have text in it.
+
+<b>Cool shit isn't it?</b>
