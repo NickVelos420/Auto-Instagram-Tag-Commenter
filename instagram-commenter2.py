@@ -24,6 +24,9 @@ timesToGoDown = 1
 firstTime = True
 filesContent = {}
 
+# This function copies and posts the current tags to the current-tags and users-written files 
+# and copares them before posting them so every tag is always unique but if it's the frist time running 
+# it returns from the function and deletes everything from the  
 def copyInput():
   # moves the mouse to the comment input
   pya.click(locations["inputX"], locations["inputY"])
@@ -34,7 +37,8 @@ def copyInput():
   fileManage["allUsersWrite"].write(pyperclip.paste())
   fileManage["currentUsersWrite"].write(pyperclip.paste())
   if firstTime == True:
-    fileManage[""]
+    # It deletes the current tags so they are always up to date
+    fileManage["currentUsersDelete"]
     return
   else:
     filesContent["allUsers"] = fileManage["allUsersRead"].split()
@@ -47,6 +51,10 @@ def copyInput():
           pya.press("delete")
           fileManage["currentUsersDelete"]
           return
+
+# The instagram algorithm stopes you from commenting after a bit so we have to if it has blocked us
+# when it stopes you it pops up a message so we this function just searches the sreen for that after 
+# it hit the enter button
 
 def checkIfCantComment(fileName):
   checksForError = pya.locateOnScreen(fileName, confidence=0.85)
