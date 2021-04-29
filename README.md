@@ -8,11 +8,13 @@
 
 #### That should do it.
 
-### If you are getting an error you're probably using the dark theme of instagram or the input placeholder does not appear. To fix the first error (the dark theme) you should just take a screenshot of the input and it must have the emoji button in it just like the comment.png file, now when you have taken the screenshot you put it in the folder of the python script and replace the seventh line with the name of the screenshot you just took. Now there may be another error
+### If you are getting an error you're probably using the dark theme of instagram or the input placeholder does not appear. To fix the first error (the dark theme) you should just take a screenshot of the input and it must have the emoji button in it just like the comment.png file, now when you have taken the screenshot you put it in the folder of the python script and replace the seventh line with the name of the screenshot you just took. Now if this error pops up again
+
+error:
 
 ```
 "inputX": commentInput[0] + 100,
 TypeError: 'NoneType' object is not subscriptable
 ```
 
-### if this happens you probably haven't fixed the first erorr or just the input placeholder doesn't appear. The placeholder should say "Add a comment" if it doesn't appear just restart the page and click the phote until it shows up.
+### it's probably a problem with instagrams input placeholder to fix this just restart the page and click on the image until the placeholder text shows "Add a comment". Also the input shouldn't have text in it.
