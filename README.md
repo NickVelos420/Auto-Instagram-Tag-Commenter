@@ -7,6 +7,14 @@
 <table>
   <caption>The Modules</caption>
   <tr>
+    <th>
+      name
+    </th>
+    <th>
+      command
+    </th>
+  </tr>
+  <tr>
     <td>pyautogui</td>
     <td>pip install pyautogui</td>
   </tr>
