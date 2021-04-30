@@ -6,10 +6,8 @@ from time import sleep
 
 commentInput = pya.locateOnScreen('comment.png', confidence=0.8)
 
-locations = {
-  "inputX": commentInput[0] + 100,
-  "inputY": commentInput[1] + 30
-}
+# the center x and y value of the comment input 
+commentLocation = pya.center(commentInput)
 
 timesToGoDown = 1
 
@@ -18,7 +16,7 @@ timesToGoDown = 1
 # it hit the enter button
 
 def checkIfCantComment():
-  checksForError = pya.locateOnScreen("error.png", confidence=0.85)
+  checksForError = pya.locateOnScreen("error.png", confidence=0.5)
   if checksForError != None:
     sleep(4 * 60)
   else: 
@@ -28,7 +26,7 @@ def bot():
   global timesToGoDown 
   while True:
     # clicks the input
-    pya.click(locations["inputX"], locations["inputY"])
+    pya.click(commentLocation)
     for j in range(3):
       # writes a random letter
       pya.typewrite("@"+random.choice(string.ascii_letters))
@@ -38,7 +36,7 @@ def bot():
       pya.press("down", presses=timesToGoDown)
       # presses enter so it writes the whole name
       pya.press("enter")
-    pya.click(locations["inputX"], locations["inputY"])
+    pya.click(commentLocation)
     pya.press("enter")
     # checks if instagram blocked you from commenting  
     checkIfCantComment()
