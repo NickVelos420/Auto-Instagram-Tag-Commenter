@@ -1,7 +1,7 @@
 import pyautogui as pya
-import pyperclip
 import string
 import random
+import keyboard as kb
 from time import sleep
 
 commentInput = pya.locateOnScreen('comment.png', confidence=0.8)
@@ -11,53 +11,14 @@ locations = {
   "inputY": commentInput[1] + 30
 }
 
-fileManage = {
-  "allUsersRead": open("users-written.txt", "r").read(),
-  "allUsersWrite": open("users-written.txt", "w"),
-  "currentUserRead": open("current-tags.txt", "r").read(),
-  "currentUsersWrite": open("current-tags.txt", "w"),
-  "currentUsersDelete": open("current-tags.txt", "r+").truncate(0)
-}
-
-
 timesToGoDown = 1
-firstTime = True
-filesContent = {}
-
-# This function copies and posts the current tags to the current-tags and users-written files 
-# and copares them before posting them so every tag is always unique but if it's the frist time running 
-# it returns from the function and deletes everything from the  
-def copyInput():
-  # moves the mouse to the comment input
-  pya.click(locations["inputX"], locations["inputY"])
-  # highlights everything
-  pya.hotkey("ctrl", "a")
-  # copies everything
-  pya.hotkey("ctrl", "c")
-  fileManage["allUsersWrite"].write(pyperclip.paste())
-  fileManage["currentUsersWrite"].write(pyperclip.paste())
-  if firstTime == True:
-    # It deletes the current tags so they are always up to date
-    fileManage["currentUsersDelete"]
-    return
-  else:
-    filesContent["allUsers"] = fileManage["allUsersRead"].split()
-    filesContent["currentUsers"] = fileManage["currentUsersRead"].split()
-    for i in filesContent["allUsers"]:
-      for j in filesContent["currentUsers"]:
-        if j == i:
-          pya.click(locations["inputX"], locations["inputY"])          
-          pya.hotkey("ctrl", "a")
-          pya.press("delete")
-          fileManage["currentUsersDelete"]
-          return
 
 # The instagram algorithm stopes you from commenting after a bit so we have to if it has blocked us
 # when it stopes you it pops up a message so we this function just searches the sreen for that after 
 # it hit the enter button
 
-def checkIfCantComment(fileName):
-  checksForError = pya.locateOnScreen(fileName, confidence=0.85)
+def checkIfCantComment():
+  checksForError = pya.locateOnScreen("error.png", confidence=0.85)
   if checksForError != None:
     sleep(4 * 60)
   else: 
@@ -65,29 +26,25 @@ def checkIfCantComment(fileName):
 
 def bot(): 
   global timesToGoDown 
-
-  for i in range(2):
-    if i > 0:
-      firstTime = False
+  while True:
     # clicks the input
     pya.click(locations["inputX"], locations["inputY"])
     for j in range(3):
       # writes a random letter
       pya.typewrite("@"+random.choice(string.ascii_letters))
       # waits for the suggestions to load
-      sleep(1.1)
+      sleep(1.5)
       # presses the down button so the users are random
       pya.press("down", presses=timesToGoDown)
       # presses enter so it writes the whole name
       pya.press("enter")
     pya.click(locations["inputX"], locations["inputY"])
-    copyInput()
-    checkIfCantComment("error.png")
-    pya.click(locations["inputX"], locations["inputY"])
     pya.press("enter")
     # checks if instagram blocked you from commenting  
-    checkIfCantComment("error.png")
+    checkIfCantComment()
     timesToGoDown += 1
+    # this line is needed because when you post a comment it takes some time to load so it's based on your internet and it doesn't have to be that high you can change it
+    sleep(3)
     
       
 if commentInput != None:
