@@ -44,14 +44,6 @@ TypeError: 'NoneType' object is not subscriptable
 <br />
 <br />
 
-#### To stop the script from running just press the escape key until you see that the script has stopped. If you want to chat the key that stopes the script you can just change the "esc" in the following line
-
-```py
-while kb.is_pressed("esc") == False
-```
-
-<br />
-
 #### To change the amount of tags you have in a comment you just have to change the number in the following for loop:
 
 ```py
