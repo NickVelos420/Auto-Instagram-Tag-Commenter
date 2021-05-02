@@ -30,7 +30,6 @@ def bot():
     # this sleep is here because the error takes some ms to pop up
     sleep(1)
     # takes a screenshot of the screen to see if the error.png file is contained within it
-    # the region will be different for you
     pya.screenshot('images/screen.png')
     # checks if instagram blocked you from commenting  
     checkIfCantComment("images/screen.png", "images/error.png")
