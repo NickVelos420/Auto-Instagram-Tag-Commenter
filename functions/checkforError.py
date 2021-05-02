@@ -21,7 +21,7 @@ def checkIfCantComment(template, small):
       print("error found")
       sleep(1 * 60)
       pya.click(commentLocation)
-      pya.hotkey("control", "a")
+      pya.hotkey("ctrl", "a")
       pya.press("delete")
   else:
     print ("Not found")
