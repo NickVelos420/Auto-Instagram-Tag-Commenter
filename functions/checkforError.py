@@ -1,8 +1,15 @@
 import cv2
 import numpy as np
+import pyautogui as pya
 from time import sleep
 
+commentInput = pya.locateOnScreen('images/comment.png', confidence=0.8)
+
+# the center x and y value of the comment input 
+commentLocation = pya.center(commentInput)
+
 def checkIfCantComment(template, small):
+  global commentLocation
   img1 = cv2.imread(template)
   img2 = cv2.imread(small)
 
@@ -13,6 +20,9 @@ def checkIfCantComment(template, small):
   if np.any(res > .83):
       print("error found")
       sleep(1 * 60)
+      pya.click(commentLocation)
+      pya.hotkey("control", "a")
+      pya.press("delete")
   else:
     print ("Not found")
 
