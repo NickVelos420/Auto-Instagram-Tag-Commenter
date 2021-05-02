@@ -10,9 +10,9 @@ def checkIfCantComment(template, small):
   img2_gray = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
 
   res = cv2.matchTemplate(img1_gray, img2_gray, cv2.TM_CCOEFF_NORMED)
-  if np.any(res > .9):
+  if np.any(res > .83):
       print("error found")
-      sleep(4)
+      sleep(1 * 60)
   else:
-    return "Not found"
+    print ("Not found")
 
