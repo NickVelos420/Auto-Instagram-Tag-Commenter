@@ -2,7 +2,7 @@
 
 ## This bot can help you with commenting on giveaways.
 
-#### The bot will not work if you haven't downloaded the module that I'm using. To download it you'll need to have python and pip installed
+#### The bot will not work if you haven't downloaded the modules that I'm using. To download it you'll need to have python and pip installed
 
 <table>
   <caption>The Modules</caption>
@@ -17,6 +17,14 @@
   <tr>
     <td>pyautogui</td>
     <td>pip install pyautogui</td>
+  </tr>
+  <tr>
+    <td>numpy</td>
+    <td>pip install numpy</td>
+  </tr>
+  <tr>
+    <td>cv2</td>
+    <td>pip install opencv-python</td>
   </tr>
 </table>
 
