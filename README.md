@@ -1,4 +1,4 @@
-# THE BOT IS STILL IN PRODUCTION MOST OF THE FUNCTIONS WORK. THE ONLY THING THAT I CAN'T GET TO WORK IS THE checkIfCantComment FUNCTION IF YOU CAN SEE THE PROBLEM PLEASE MAKE A PULL REQUEST
+# THE BOT FULLY WORKS. BUT THERE ARE SOME THINGS THAT I WANT TO MAKE SOME SLIGHT CHANGES AND ADD SOME FEATURES.
 
 ## This bot can help you with commenting on giveaways.
 
@@ -38,16 +38,9 @@
 commentInput = pya.locateOnScreen('comment.png', confidence=0.8)
 ```
 
-### with the name of the screenshot you just took. Now if this error pops up again
+<br />
 
-###### error:
-
-```
-"inputX": commentInput[0] + 100,
-TypeError: 'NoneType' object is not subscriptable
-```
-
-### it's probably a problem with instagrams input placeholder to fix this just restart the page and click on the image until the placeholder text shows "Add a comment". Also the input shouldn't have text in it.
+### If you're still getting an error it's probably a problem with instagrams input placeholder to fix this just restart the page and click on the image until the placeholder text shows "Add a comment". Also the input shouldn't have text in it.
 
 <br />
 <br />
